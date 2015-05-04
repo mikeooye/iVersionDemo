@@ -21,8 +21,9 @@
 + (void)initialize
 {
     
-//    [iVersion sharedInstance].applicationBundleID = @"com.tencent.xin";
-    [iVersion sharedInstance].appStoreCountry = @"cn";
+//    [iVersion sharedInstance].applicationBundleID = @"com.tencent.xin"; //指定特定App的 BundleID
+
+    [iVersion sharedInstance].appStoreCountry = @"cn";//指定国家，若不设置，可能会显示英文
     
     //configure iVersion. These paths are optional - if you don't set
     //them, iVersion will just get the release notes from iTunes directly (if your app is on the store)
@@ -30,8 +31,8 @@
 //    [iVersion sharedInstance].localVersionsPlistPath = @"versions.plist";
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.versionDelegate = [[iVersionDelegate alloc] init];
     [[iVersion sharedInstance] setDelegate:self.versionDelegate];

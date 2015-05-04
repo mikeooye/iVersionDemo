@@ -27,7 +27,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[iVersion sharedInstance] setPreviewMode:YES];
     [[iVersion sharedInstance] checkForNewVersion];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
